@@ -1,0 +1,107 @@
+body{
+    background-color: bisque;
+}
+h1{
+    color: rebeccapurple
+}
+
+.center-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh; 
+  overflow: hidden;
+}
+
+.auth-button{
+    background-color: pink;
+    padding: 5px 10px;
+    margin: 5px 0;
+    display: block;
+    text-align: center;
+    border-radius: 20px;
+    text-decoration: none;
+    color: darkgreen;
+    width: auto;
+}
+
+input{
+    width: 35vw;
+    padding: 5px 10px;
+    border-radius: 10px;
+}
+
+.item-gap{
+    margin: 8px 0;
+}
+
+label{
+    color: rebeccapurple;
+}
+
+input[type="radio"] {
+    width: auto;
+}
+
+
+.input-error{
+    color: red;
+    font-size: 14px;
+}
+
+.profile-section{
+    display: flex;
+    justify-content: space-around; /* Adjust as needed */
+    align-items: center;
+    width: 100vw;
+}
+
+.profile-inner{
+    background-color: #f0f0f0;
+    border: 1px solid #ddd;
+    padding: 20px;
+    margin: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.left-card{
+    width: 30vw;
+    height: fit-content;
+    text-align: center;
+}
+.right-card{
+    width: 70vw;
+    height: fit-content;
+}
+
+.left-card img{
+    border-radius: 50%;
+}
+
+.left-card h5{
+    font-size: 20px;
+    color: rebeccapurple;
+}
+
+.left-card p{
+    font-size: 16px;
+    color: coral;
+}
+
+.right-card div div{
+    display: flex;
+    justify-content: space-between;
+
+}
+
+.right-card div div button{
+    background-color: pink;
+    border-radius: 20px;
+    margin-top: 20px;
+    padding: 10px;
+    color: cadetblue;
+}
+
+.right-card p span{
+    font-weight: bold;
+}
