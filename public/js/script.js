@@ -19,5 +19,14 @@ document.addEventListener('DOMContentLoaded', function(){
         alert('Error: '+error);
       });
     });
+
+
+    let updateProfileButton = document.querySelector('#update_profile_button');
+
+    updateProfileButton.addEventListener('click', function(){
+        console.log('hell0')
+        window.location.href = './update_profile.php';
+    })
+    
     
 });

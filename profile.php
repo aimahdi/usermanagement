@@ -40,8 +40,8 @@ try{
             <div>
             <img src="./assets/vectors/profile_avater.jpg" width="200px" height="200px"alt="">
             <h5> <?=$userData['first_name'] . ' '. $userData['last_name'] ?></h5>
-            <p>Job Title</p>
-            <p>Department Name</p>
+            <p>Job Title: <?= $userData['job_title']?></p>
+            <p>Department: <?= $userData['department']?></p>
             </div>
         </div>
         <div class="profile-inner right-card">
@@ -57,11 +57,57 @@ try{
                 <hr>
                 <p><span>Email:</span> <?=$userData['email']?></p>
                 <div>
-                <button>Update Profile</button>
+                <button id='update_profile_button'>Update Profile</button>
                 <button id='logout'>Log Out</button>
                 </div>
             </div>
         </div>
+    </div>
+    <div>
+         <!-- Tabs -->
+
+         <script>
+            function openTab(tabId) {
+        // Hide all tab contents
+        var tabContents = document.getElementsByClassName('tab-content');
+        for (var i = 0; i < tabContents.length; i++) {
+            tabContents[i].classList.remove('active');
+        }
+
+        // Show the selected tab content
+        document.getElementById(tabId).classList.add('active');
+    }
+         </script>
+    <div class="tab">
+        <button onclick="openTab('chats')">
+            Doing
+        </button>
+        <button onclick="openTab('status')">
+           To Do
+        </button>
+        <button onclick="openTab('calls')">
+            Done
+        </button>
+    </div>
+<br>
+    <!-- Tab contents -->
+    <div class="tab-container">
+    <div class="tab-content" id="chats">
+        <h3>Chats</h3>
+        <p>This is the content for Chats tab.</p>
+    </div>
+
+    <div class="tab-content" id="status">
+        <h3>Status</h3>
+        <p>This is the content for Status tab.</p>
+    </div>
+
+    <div class="tab-content" id="calls">
+        <h3>Calls</h3>
+        <p>This is the content for Calls tab.</p>
+    </div>
+    </div>
+    <button class="fab" onclick="handleButtonClick()">+</button>
     </div>
 </div>
     

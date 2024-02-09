@@ -1,5 +1,6 @@
 body{
     background-color: bisque;
+    overflow: hidden;
 }
 h1{
     color: rebeccapurple
@@ -53,25 +54,27 @@ input[type="radio"] {
     display: flex;
     justify-content: space-around; /* Adjust as needed */
     align-items: center;
-    width: 100vw;
+    width: 100%;
 }
 
 .profile-inner{
     background-color: #f0f0f0;
     border: 1px solid #ddd;
-    padding: 20px;
-    margin: 10px;
+    padding: 10px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
 .left-card{
-    width: 30vw;
+    flex-basis: 30%;
     height: fit-content;
     text-align: center;
+    margin: 0 10px;
+    padding: 20px;
 }
 .right-card{
-    width: 70vw;
+    flex-basis: 70%;
     height: fit-content;
+    margin: 0 10px;
 }
 
 .left-card img{
@@ -104,4 +107,73 @@ input[type="radio"] {
 
 .right-card p span{
     font-weight: bold;
+}
+
+
+ /* Style for tabs */
+ .tab {
+    display: flex;
+    justify-content: space-around;
+    padding: 0 15px;
+    color: #fff;
+    margin-top: 15px;
+}
+
+.tab button {
+    background-color: transparent;
+    border: none;
+    background-color: #075e54;
+    cursor: pointer;
+    outline: none;
+    padding: 10px;
+    font-size: 16px;
+    margin: 0 5px;
+    width: 33.3333%;
+    color: #fff;
+}
+
+/* Style for the tab content */
+
+.tab-container{
+    
+    display: flex;
+    padding: 0 15px;
+}
+.tab button{
+    flex-basis: 33.33%;
+}
+.tab-content {
+    flex-basis: 33.33%;
+    padding: 20px;
+    background-color: #f1f1f1;
+    margin: 0 5px;
+    
+}
+
+/* Style for the active tab content */
+.tab-content.active {
+    display: block;
+    flex-basis: 33.33%;
+}
+
+.fab {
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 50%;
+    width: 56px;
+    height: 56px;
+    font-size: 24px;
+    cursor: pointer;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    bottom: 16px;
+    right: 16px;
+}
+
+input[readonly]{
+    background-color: rgb(216, 209, 209);
 }
