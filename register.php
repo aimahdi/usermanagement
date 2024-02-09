@@ -74,6 +74,8 @@ $firstNameError = $lastNameError = $phoneError = $genderError = $emailError = $p
 
     $password = password_hash($password, PASSWORD_DEFAULT);
 
+    global $emailError;
+
     $createUserSQL = "INSERT INTO users ($columnFirstName, $columnLastName, $columnPhone, $columnGender, $columnEmail, $columnPassword)
     VALUES (?, ?, ?, ?, ?, ?)";
 
@@ -89,7 +91,7 @@ $firstNameError = $lastNameError = $phoneError = $genderError = $emailError = $p
         header("Location: profile.php");
         exit(); 
     } catch (Exception $createUserException) {
-        echo "Error: " . $createUserSQL . "<br>" . $stmt->error;
+          $emailError = $stmt->error;
     }
 
     $stmt->close();
@@ -113,17 +115,17 @@ $firstNameError = $lastNameError = $phoneError = $genderError = $emailError = $p
 <form method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>">
   <div class="item-gap">
   <label for="first_name">First name:</label><br>
-  <input type="text" id="first_name" name="first_name"><br>
+  <input type="text" id="first_name" name="first_name" value=<?= $firstName?>><br>
   <span class="input-error"><?= $firstNameError?></span>
   </div>
   <div class="item-gap">
   <label for="last_name">Last name:</label><br>
-  <input type="text" id="last_name" name="last_name"><br>
+  <input type="text" id="last_name" name="last_name" value=<?= $lastName?>><br>
   <span class="input-error"><?= $lastNameError ?></span>
   </div>
   <div class="item-gap">
   <label for="phone">Phone:</label><br>
-  <input type="phone" id="phone" name="phone"><br>
+  <input type="phone" id="phone" name="phone" value=<?= $phone?>><br>
   <span class="input-error"><?= $phoneError?></span>
   </div>
   <div class="item-gap">
